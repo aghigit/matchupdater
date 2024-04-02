@@ -1,0 +1,118 @@
+
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid p-2 mt-2">
+          <img src="assets/image/football_1165249.png" class="footballLogo ms-2" height="50px" alt="">
+          <h1 class="navHeader text-light" href="#">Match Updater</h1>
+          <h1 class="navbar-toggler outline text-light mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           More
+          </h1>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ms-auto mt-3" role="search">
+              <button (click)="logOut()" class="btn btn-outline-danger">LOG-OUT</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="d-flex align-items-center justify-content-end me-5 mt-3">
+        <h1 >Admin Dashboard</h1>
+      </div>  
+
+      <div class="d-flex align-items-center justify-content-center">
+        <hr style="width: 98%; color: rgb(250, 162, 255);">
+      </div>
+      <h1 class="text-center mt-3">ADD LIVE-SCORES</h1>
+      <P class="text-center">(YOU CAN ONLY ADD SINGLE LIVE-SCORE TABLE AT A TIME)</P>
+      
+      <div class="d-flex align-items-center justify-content-center mb-3">
+        <button *ngIf="livescores.length==0"  class="btn btn-outline-light p-3 me-2 " routerLink="/addlive">ADD-LIVE</button>
+      </div>
+
+      <div *ngFor="let scores of livescores"  class= "p-1 d-flex align-items-center justify-content-center flex-column w-100 mt-3 mb-3">    
+        <div  style="width: 90%;" class="d-flex align-items-center justify-content-center flex-column  border rounded">
+            <div class="d-flex align-items-center justify-content-center w-75 mt-3 mb-3">
+                <button style="border: none;" class="p-2 rounded liveBtn">LIVE</button>
+            </div>
+            <div   class="w-100 d-flex align-items-center justify-content-around">
+                <div class="bgfilt d-flex align-items-center justify-content-center flex-column mb-3">
+                    <h1> <img src="assets/image/football_1165249.png" height="25px" alt="">{{scores.score1}}</h1>
+                    <h2 class="clubname text-center">{{scores.clubname1}}</h2>    
+                    <div class="d-flex align-items-center justify-content-center"> 
+                        <h3 class="me-2"></h3>
+                        <h4></h4>
+                    </div>
+                </div>
+                <i class="fa-solid fa-minus fa-beat-fade fa-3x text-center ms-2 " style="color: #ffffff;"></i>
+                <div class="bgfilt d-flex align-items-center justify-content-center flex-column mb-3">
+                    <h1><img src="assets/image/football_1165249.png" height="25px" alt="">{{scores.score2}}</h1>
+                    <h2 class="text-center clubname">{{scores.clubname2}}</h2>    
+                    <div class="d-flex align-items-center justify-content-center">
+                        <h3 class="me-2"></h3>
+                        <h4></h4>
+                    </div>
+                </div>
+            </div>
+            <h4 class="clubname ms-2">VENUE:{{scores.stadium}}</h4> 
+            <h6 class="mb-5 discription ms-2">{{scores.discription}}</h6>
+        </div>
+        <div class="d-flex align-items-center justify-content-center mt-2 mb-3">
+          <button (click)="deletelive(scores._id)" class="btn btn-outline-light text-light">DELETE-LIVE
+           <img  src="assets/image/delete_6861362.png" height="20px" class="mt-2 mb-2" alt="">
+          </button>
+          <button *ngIf="livescores.length!=0" class="btn btn-outline-light p-3 ms-2" routerLink="/editlive/{{scores._id}}">UPDATE-LIVE</button>
+         </div>
+    </div>
+
+    <div class="d-flex align-items-center justify-content-center">
+      <hr style="width: 98%; color: rgb(250, 162, 255);">
+    </div>
+
+    <app-point-table></app-point-table>
+    
+       <div class="d-flex align-items-center justify-content-center">
+        <hr style="width: 98%; color: rgb(250, 162, 255);">
+      </div>
+
+      <app-addslider></app-addslider>
+
+       <h1 class="text-center">IMAGE-GALLERY</h1>
+
+       <div class="w-100 d-flex align-items-center justify-content-around flex-wrap mb-3">
+        <div *ngFor="let imgData of higlightImages" class="ms-3 mt-3 d-flex flex-column"> 
+          <img  height="200px" src="http://localhost:3000/uploads/{{imgData.mainimage}}" alt="no image">
+          <button (click)="deleteImage(imgData._id)" class="btn btn-outline-light text-light">DELETE-IMAGE
+            <img  src="assets/image/delete_6861362.png" height="20px" class="mt-2 mb-2" alt="">
+           </button> 
+        </div>          
+      </div>
+      <div *ngIf="higlightImages.length==0" class="d-flex align-items-center justify-content-center mt-5 mb-5">
+        <h4>Your Not Uploaded Any Images...</h4>
+      </div>
+
+
+      <div class="d-flex align-items-center justify-content-center">
+        <hr style="width: 98%; color: rgb(250, 162, 255);">
+      </div>
+
+      <h2 class="text-center">PRESS-RELEASES</h2>
+
+      <div class="d-flex align-items-center justify-content-center mb-3">
+        <button   class="btn btn-outline-light p-3 me-2 " routerLink="/addpress">ADD PRESS-RELEASE </button>
+      </div>
+
+      <div *ngFor="let press of allpressReleases" class="d-flex align-items-center justify-content-center flex-column w-100 mb-3 ">        
+        <div   class="w-75 border rounded p-3 pressBg">
+          <h3 class="ms-3 mt-3 ">{{press.pressHeading}}</h3>
+          <h4 class="">{{press.pressDiscription}}</h4>
+        </div>
+        <div class="d-flex align-items-center justify-content-center mt-2 mb-3">
+          <button (click)="deletePressRelease(press._id)" class="btn btn-outline-light text-light">DELETE
+           <img  src="assets/image/delete_6861362.png" height="20px" class="mt-2 mb-2" alt="">
+          </button>
+          <button  class="btn btn-outline-light p-3 ms-2" routerLink="/updatepress/{{press._id}}">UPDATE</button>
+         </div>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-center">
+        <hr style="width: 98%; color: rgb(250, 162, 255);">
+      </div>
+

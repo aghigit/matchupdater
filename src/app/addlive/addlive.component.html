@@ -1,0 +1,62 @@
+
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid p-2">
+      <img src="assets/image/football_1165249.png" class="footballLogo ms-2" height="50px" alt="">
+      <!-- <i class="fa-solid fa-futbol fa-spin fa-spin-reverse fa-3x ms-3 me-3" style="color: #b08ece;"></i> -->
+      <h1 class="navHeader text-light" href="#">Match Updater</h1>
+      <h1 class="navbar-toggler outline text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       More
+        <!-- <span class="navbar-toggler-icon"></span> -->
+      </h1>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="d-flex ms-auto" role="search">
+          <button (click)="logOut()" class="btn btn-outline-danger">LOG-OUT</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<h2 class="text-center mt-3">ADD LIVESCORE DETAILS</h2>
+
+<div class="d-flex align-items-center justify-content-center w-100 mt-3 mb-3">
+    <div style="width: 75%;"> 
+        <form [formGroup]="addlive" action="">
+            <div class="row"> 
+                <div class="col-lg-6">
+                    <div class="form-floating mb-3">
+                        <input name="clubname1" formControlName="clubname1" type="text" class="form-control text-light" id="floatingInputclub1" placeholder="TEAM1">
+                        <label for="floatingInputclub1">TEAM-1</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input name="score1" formControlName="score1" type="text" class="form-control text-light" id="floatingInputscore1" placeholder="TEAM1">
+                        <label for="floatingInputscore1">SCORE</label>
+                      </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-floating mb-3">
+                        <input name="clubname2" formControlName="clubname2" type="text" class="form-control text-light" id="floatingInputclub2" placeholder="TEAM-2">
+                        <label for="floatingInputclub2">TEAM-2</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input name="score2" formControlName="score2" type="text" class="form-control text-light" id="floatingInputscore2" placeholder="SCORE">
+                        <label for="floatingInputscore2">SCORE</label>
+                      </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-center">
+                    <div class="form-floating mb-3 w-75">
+                        <input name="stadium" formControlName="stadium" type="text" class="form-control text-light" id="floatingInputstadium" placeholder="STADIUM">
+                        <label for="floatingInputstadium">STADIUM</label>
+                      </div>    
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea name="discription" formControlName="discription" class="form-control text-light" placeholder="discription" id="floatingTextareadiscription" style="height: 100px"></textarea>
+                    <label for="floatingTextareadiscription">MATCH-DISCRIPTION</label>
+                  </div>
+                <div class="d-flex align-items-center justify-content-center ">
+                    <button (click)="addDeatils()" class="btn btn-outline-light p-2">ADD-DETAILS</button>
+                    <button routerLink="/dashboard" class="btn btn-outline-light ms-2 p-2">BACK</button>
+                  </div>
+            </div>
+        </form>
+    </div>
+</div>

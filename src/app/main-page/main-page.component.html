@@ -1,0 +1,167 @@
+
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid p-2">
+      <img src="assets/image/football_1165249.png" class="footballLogo ms-2" height="50px" alt="">
+      <h1 class="navHeader text-light" href="#">Match Updater</h1>
+      <h1 class="navbar-toggler outline text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       More
+      </h1>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="d-flex ms-auto" role="search">
+          <div class="dropdown me-5">
+            <button class="btn btn-outline-light dropdown-toggle me-5" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Admins
+            </button>
+            <ul class="dropdown-menu ">
+              <li><a class="dropdown-item text-light" href="/register">Admin REGISTER</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-light" href="/login">Admin LOG-IN</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </nav>  
+
+  <marquee class="mt-3 racism" behavior="" direction="">
+    <h3><img src="assets/image/racism.png" height="40px" alt="">
+    No Room For Racism</h3>
+  </marquee>
+
+  <div  class="d-flex align-items-center justify-content-center w-100 mt-3 mb-3">    
+    <div *ngFor="let scores of livescores" style="width: 90%;" class="d-flex align-items-center justify-content-center flex-column  border rounded">
+        <div class="d-flex align-items-center justify-content-center w-75 mt-3 mb-3">
+            <span class="btn btn-danger liveBtn">LIVE</span>
+        </div>
+        <div   class="w-100 d-flex align-items-center justify-content-around">
+            <div class="bgfilt d-flex align-items-center justify-content-center flex-column mb-3">
+                <h1> <img src="assets/image/football_1165249.png" height="25px" alt="">{{scores.score1}}</h1>
+                <h2 class="text-center cn">{{scores.clubname1}}</h2>    
+                <div class="d-flex align-items-center justify-content-center"> 
+                    <h3 class="me-2"></h3>
+                    <h4></h4>
+                </div>
+            </div>
+            <i class="fa-solid fa-minus fa-beat-fade fa-3x" style="color: #ffffff;"></i>
+            <div class="bgfilt d-flex align-items-center justify-content-center flex-column mb-3">
+                <h1><img src="assets/image/football_1165249.png" height="25px" alt="">{{scores.score2}}</h1>
+                <h2 class="text-center cn">{{scores.clubname2}}</h2>    
+                <div class="d-flex align-items-center justify-content-center">
+                    <h3 class="me-2"></h3>
+                    <h4></h4>
+                </div>
+            </div>
+        </div>
+        <h4 class="st">VENUE:{{scores.stadium}}</h4> 
+        <h6 class="st ms-3">{{scores.discription}}</h6>
+    </div>
+</div>
+
+<div class="d-flex align-items-center justify-content-center">
+  <hr style="width: 98%; color: rgb(250, 162, 255);">
+</div>
+
+
+  <div class="w-100 d-flex align-items-center justify-content-center flex-column mb-2 mt-2">
+    <h2>POINTS-TABLE</h2>
+  </div>
+  <div class="w-100 d-flex align-items-center justify-content-center mb-2">
+    <table style="width:95%;" class="mb-2 border">
+        <thead  class=" text-center mt-3">
+            <tr class="mt-3">
+                <th class=" border" style="width: 10%;">
+                    <img src="assets/image/ribbon_8845232.png" class="posImg" height="30px" alt="">
+                    </th>
+                <th class="border" style="width: 15%;">
+                    <img src="assets/image/uniform_4047107.png" class="posImg ms-2" height="25px" alt="">
+                    </th>
+                <th class="border" style="width: 20%;">
+                  <img src="assets/image/cup_12713554.png" class="posImg" height="25px" alt="">
+                  WON</th>
+                <th class="border" style="width: 20%;">
+                  <img src="assets/image/friendship_5965811.png" class="posImg " height="35px" alt="">
+                  TIE</th>
+                <th class="border">
+                  <img src="/assets/image/thumbsdown.png" class="posImg" height="30px" alt="">
+                  LOSS</th>
+                <th style="width: 20%;">PIONT</th>
+            </tr>
+        </thead>
+        <tbody class="text-center border" >
+            <tr *ngFor="let points of allpointsTable let i=index">
+                <th>{{i+1}}</th>
+                <th class="cn">{{points.clubname}}</th>
+                <th>{{points.won}}</th>
+                <th>{{points.tie}}</th>
+                <th>{{points.loss}}</th>
+                <th>{{points.point}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="d-flex align-items-center justify-content-center">
+  <hr style="width: 98%; color: rgb(250, 162, 255);">
+</div>
+
+<h2 class="text-center">IMAGE-GALLERY</h2>
+<marquee class="mt-5">
+  <div class="d-flex align-items-center justify-content-around"> 
+   <div *ngFor="let imgData of allImages" class="ms-2"> 
+    <img  height="300px" src="http://localhost:3000/uploads/{{imgData.mainimage}}" alt="no image">
+  </div>    
+  </div>
+</marquee>
+
+<div class="d-flex align-items-center justify-content-center">
+  <hr style="width: 98%; color: rgb(250, 162, 255);">
+</div>
+
+<h3 class="text-center">PRESS-RELEASES</h3>
+<div *ngFor="let press of allpressReleases" class="d-flex align-items-center justify-content-center flex-column w-100 mb-3 ">        
+  <div   class="w-75 border rounded p-3 pressBg">
+    <h3 class="ms-3 mt-3 ">{{press.pressHeading}}</h3>
+    <h6 class="">{{press.pressDiscription}}</h6>
+  </div>
+</div>
+
+
+<div class="d-flex align-items-center justify-content-center">
+  <hr style="width: 98%; color: rgb(250, 162, 255);">
+</div>
+
+<footer>
+  <div class="d-flex align-items-center justify-content-around w-100 row">
+    <div class="col-lg-4">
+      <h3 class="text-center mt-4">SOCIAL</h3>
+      <span class="d-flex align-items-center ms-3 mb-2" >
+        <i class="fa-brands fa-square-youtube fa-3x me-2"></i>
+       /matchupdater
+      </span>
+      <span class="d-flex align-items-center ms-3 mb-2" >
+        <i class="fa-brands fa-square-x-twitter fa-3x me-2" style="color: #ffffff;"></i>
+       /matchupdater
+      </span>
+      <span class="d-flex align-items-center ms-3 mb-2" >
+        <i class="fa-brands fa-facebook fa-3x me-2"></i>
+       /matchupdater
+      </span>
+      <span class="d-flex align-items-center ms-3 mb-2" >
+        <i class="fa-brands fa-square-instagram fa-3x me-2"></i>
+         /matchupdater
+      </span>
+    </div>
+    <div class="col-lg-4 ms-3 mt-2">
+      <h3>About</h3>
+      <h5 >
+        MatchUpdater Will Get You All Informations Like LiveScores,PointTable,Press Relaeses etc.
+      </h5>
+    </div>
+  </div>
+</footer>
+
+<h5 class="text-center mt-3 mb-3">
+  © MATCH UPDATER 2024
+</h5>
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-scale-multiple" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>

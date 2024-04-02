@@ -1,0 +1,38 @@
+<div  style="height: 100vh; width: 100%;"  class="registerWraper d-flex align-items-center justify-content-center">
+    <div style="width: 85%;" class="row border rounded p-4">
+        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+            <div class="">
+              <img src="assets/image/football_1165249.png" class="footballLogo ms-2" height="50px" alt="">
+                <!-- <i class="fa-solid fa-futbol fa-spin fa-spin-reverse fa-3x" style="color: #b08ece;"></i> -->
+                <h1 class="lmHeading">Match Updater</h1>
+                <h6 class="registerPara">
+                    Update your football match live status,scores,match summary,fixtures, upcoming matches and more... 
+                </h6>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h3 class="registernowHeading text-center p-2">Admin Login</h3>
+            <form [formGroup]="loginForm">
+                  <div class="form-floating mb-3 ">
+                    <input name="email" formControlName="email" type="email" class="text-light form-control inputStyle" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                  </div>
+                  <div *ngIf="loginForm.get('email')?.errors &&loginForm.get('email')?.touched" class="mb-4 text-danger">
+                    Invalid E-mail*
+                  </div>
+                  <div class="form-floating">
+                    <input name="password" formControlName="password" type="password" class=" text-light form-control inputStyle" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <div *ngIf="loginForm.get('password')?.errors &&loginForm.get('password')?.touched" class="mb-4 text-danger">
+                    Invalid Password*
+                  </div>
+                  <div class="d-flex align-items-center justify-content-end">
+                    <button (click)="login()" class="btn mt-3 text-light ">LogIn</button>
+                  </div>
+                  <h6>Not registerd? <a class="btnalredy" routerLink="/register">please Register</a></h6>
+            </form>      
+        </div>
+    </div>      
+</div>
+<form action="" ></form>

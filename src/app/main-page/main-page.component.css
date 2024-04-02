@@ -1,0 +1,76 @@
+.dashboardwrapper{
+    height: 100%;
+}
+.navbar{
+    background-image: linear-gradient(30deg,#000000,#050207 30%,#0b0411,#12071c,#180926,#1f0c31,#260f3c);
+}
+.navHeader{
+    font-family: "Madimi One", sans-serif;
+}
+.navbar-toggler{
+    background-color: #3c2056;
+}
+.footballLogo{
+    margin-right:2%;
+    filter: drop-shadow(0px 0px 15px #681661);
+    animation: rotation 5s infinite linear;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(360deg); 
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.liveBtn{
+    font-size: 150%;
+		font-family: cursive;
+		color: white;
+		animation: blink 1.2s linear infinite;
+        background-color: rgb(255, 0, 0);
+}
+@keyframes blink{ 
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+    }
+
+.bgfilt{
+    filter: drop-shadow(5px 5px 10px #681661);
+}   
+
+
+table{
+    filter: drop-shadow(0px 0px 15px #1e021b);
+}
+thead>tr>th{
+    padding: 1%;
+    background-image: linear-gradient(180deg,#000000,#050207 10%,#0b0411,#12071c,#180926,#1f0c31 80%,#260f3c);
+}
+.posImg{
+    filter: drop-shadow(0px 0px 15px #a8229b);
+}
+tbody>tr>th{
+    padding: 1%;
+    background-image: linear-gradient(140deg,#000000,#050207 10%,#0b0411,#12071c,#180926,#1f0c31 50%,#260f3c);
+}
+.dropdown-menu{
+    background-image: linear-gradient(360deg,#000000,#050207 30%,#0b0411,#12071c,#180926,#1f0c31,#260f3c);
+}
+.dropdown-item:hover{
+    background-color: #dc18ff;
+}
+.racism{
+    filter: drop-shadow(0px 0px 15px #ed82e3); 
+}
+.cn{
+    text-transform: uppercase;
+}
+.st{
+    text-transform: capitalize;
+}
+footer{
+    background-image: linear-gradient(30deg,#000000,#050207 30%,#0b0411,#12071c,#180926,#1f0c31,#260f3c); 
+}

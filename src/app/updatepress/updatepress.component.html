@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid p-2">
+      <img src="assets/image/football_1165249.png" class="footballLogo ms-2" height="50px" alt="">
+      <!-- <i class="fa-solid fa-futbol fa-spin fa-spin-reverse fa-3x ms-3 me-3" style="color: #b08ece;"></i> -->
+      <h1 class="navHeader text-light" href="#">Match Updater</h1>
+      <h1 class="navbar-toggler outline text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       More
+        <!-- <span class="navbar-toggler-icon"></span> -->
+      </h1>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="d-flex ms-auto" role="search">
+          <button (click)="logOut()" class="btn btn-outline-danger">LOG-OUT</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <form >
+    <div class="d-flex align-items-center justify-content-center flex-column w-100 mb-3" style="height: 85dvh;">
+      <h2 class="text-center mt-3">EDIT PRESS-RELEASES</h2>
+      <div class="w-100 d-flex align-items-center justify-content-center flex-column">
+        <div class="form-floating mb-3 w-50">
+          <input name="pressHeading" [(ngModel)]="pressReleases.pressHeading" type="text"  class="form-control text-light" id="floatingInputpressHeading" placeholder="HEADING">
+          <label for="floatingInputpressHeading">HEADING</label>
+        </div>
+        <!-- <div *ngIf="addPress.get('pressHeading')?.errors && addPress.get('pressHeading')?.touched" class="mb-4 text-danger ">
+          *HEADING is REQUIRED
+        </div> -->
+
+        <div class="form-floating w-75">
+          <textarea name="pressDiscription" [(ngModel)]="pressReleases.pressDiscription" class="form-control text-light" placeholder="News Discription" id="floatingTextarea2pressDiscription" style="height: 100px"></textarea>
+          <label for="floatingTextarea2pressDiscription">DISCRIPTION</label>
+        </div>
+        <div class="d-flex align-items-center justify-content-center mt-3">
+          <button (click)="updatesinglePress(pressReleases._id)" class="btn btn-outline-light p-2">UPDATE</button>
+          <button routerLink="/dashboard" class="btn btn-outline-light p-2 ms-2">BACK</button>      
+        </div>
+      </div>
+    </div>
+  </form>  
+

@@ -1,0 +1,38 @@
+.navbar{
+    background-image: linear-gradient(30deg,#000000,#050207 30%,#0b0411,#12071c,#180926,#1f0c31,#260f3c);
+}
+.navHeader{
+    font-family: "Madimi One", sans-serif;
+}
+.navbar-toggler{
+    background-color: #3c2056;
+}
+.footballLogo{
+    margin-right:2%;
+    filter: drop-shadow(0px 0px 15px #681661);
+    animation: rotation 5s infinite linear;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.form-control{
+    /* background-color: #2a1141; */
+    background-image: linear-gradient(135deg,#000000,#050207 30%,#0b0411,#12071c,#180926,#1f0c31,#260f3c);
+}
+.input-group-text{
+    background-image: linear-gradient(360deg,#000000,#050207 30%,#0b0411,#12071c,#180926,#1f0c31,#260f3c);
+}
+
+.btn{
+    background-image: linear-gradient(30deg,#000000,#050207 50%,#0b0411,#12071c,#180926,#1f0c31,#260f3c);
+}
+.btn:hover{
+    color: #ffffff;
+    background-image: linear-gradient(200deg,#000000,#050207 ,#0b0411,#12071c,#180926,#1f0c31,#3d1e5a 50%);
+}

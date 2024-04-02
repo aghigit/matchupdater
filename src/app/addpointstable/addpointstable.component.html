@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid p-2">
+      <img src="assets/image/football_1165249.png" class="footballLogo ms-2" height="50px" alt="">
+      <!-- <i class="fa-solid fa-futbol fa-spin fa-spin-reverse fa-3x ms-3 me-3" style="color: #b08ece;"></i> -->
+      <h1 class="navHeader text-light" href="#">Match Updater</h1>
+      <h1 class="navbar-toggler outline text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       More
+        <!-- <span class="navbar-toggler-icon"></span> -->
+      </h1>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="d-flex ms-auto" role="search">
+          <button (click)="logOut()" class="btn btn-outline-danger">LOG-OUT</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+ 
+  <div class="d-flex align-items-center justify-content-end me-5 mt-3">
+    <h1 >Admin Dashboard</h1>
+  </div>  
+  
+ <div class="d-flex align-items-center justify-content-center"> 
+  <h3>ADD-CLUB-DETAILS</h3>
+ </div>
+
+<div class="d-flex align-items-center justify-content-center mb-5 w-100">
+  <div class="addPointsTab w-75 border rounded d-flex align-items-center justify-content-center mt-3 p-2 mb-2">
+    <form [formGroup]="addpoints" action="">
+      <div class="row"> 
+        <div class="col-lg-6 mt-3">
+          <div class="form-floating  mb-3">
+            <input name="clubname" formControlName="clubname" type="text" class="form-control text-light" id="floatingInputclub" placeholder="CLUB-NAME">
+            <label for="floatingInputclub">CLUB-NAME</label>
+          </div> 
+          <div *ngIf="addpoints.get('clubname')?.errors && addpoints.get('clubname')?.touched" class="mb-3 text-danger">
+            *CLUB-NAME is REQUIRED
+          </div>
+
+          <div class="form-floating mb-3">
+            <input name="won" formControlName="won" type="text" class="form-control text-light" id="floatingInputwon" placeholder="WON">
+            <label for="floatingInputwon">WON</label>
+          </div>
+          <div *ngIf="addpoints.get('won')?.errors" class="mb-3 text-danger">
+            *INVALID NUMBER
+          </div> 
+          <div class="form-floating mb-1">
+            <input name="tie" formControlName="tie" type="text" class="form-control text-light" id="floatingInputtie" placeholder="TIE">
+            <label for="floatingInputtie">TIE</label>
+          </div>
+          <div *ngIf="addpoints.get('tie')?.errors" class="mb-1 text-danger">
+            *INVALID NUMBER
+          </div>
+        </div>
+
+        <div class="col-lg-6 mt-3">
+          <div class="form-floating mb-3">
+            <input name="loss" formControlName="loss" type="text" class="form-control text-light" id="floatingInputloss" placeholder="LOSS">
+            <label for="floatingInputloss">LOSS</label>
+          </div>
+          <div *ngIf="addpoints.get('loss')?.errors" class="mb-3 text-danger">
+            *INVALID NUMBER
+          </div>
+
+          <div class="form-floating mb-3">
+            <input name="point" formControlName="point" type="text" class="form-control text-light" id="floatingInputpoint" placeholder="POINT">
+            <label for="floatingInputpoint">POINT</label>
+          </div>
+          <div *ngIf="addpoints.get('point')?.errors && addpoints.get('point')?.touched" class="mb-3 text-danger">
+            *POINT is REQUIRED/INVALID NUMBER
+          </div>
+          <div class="d-flex align-items-center justify-content-end mb-3">
+            <button (click)="postPoints()" class="btn btn-outline-light p-3">ADD-DETAILS</button>
+            <button routerLink="/dashboard" class="btn btn-outline-light p-2 ms-2">BACK</button>          
+          </div>
+        </div> 
+      </div>
+    </form>
+  </div>
+</div> 

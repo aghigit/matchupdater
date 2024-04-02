@@ -1,0 +1,20 @@
+
+    
+    <div  class=" w-100 d-flex align-items-center justify-content-center mb-4">
+      <div style="width: 80%;">
+        <div class="border rounded d-flex align-items-center justify-content-center ">
+          <label class="w-100 p-3 d-flex align-items-center justify-content-center ">
+            <input (change)="getMainimg($event)" type="file" style="display: none;">
+            <img [src]="mainImage" width="65%" alt="" class="addImgslider2 ">
+            <div class="addImagediv text-center">
+              <i class="fa-solid fa-plus fa-fade fa-5x" style="color: #f600e1;"></i>
+              <h4>Click To Add Image</h4>
+            </div>
+          </label> 
+        </div>
+        <div class="d-flex align-items-center justify-content-center mt-3 ">
+          <button (click)="uploadImage()"  class="btn btn-outline-light me-2">UPLOAD IMAGE</button>
+        </div>    
+      </div>
+    </div>
+

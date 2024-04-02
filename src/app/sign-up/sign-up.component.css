@@ -1,0 +1,37 @@
+/* .registerWraper{
+    background-color: #12071c;
+} */
+.registerCard{
+    background-image: linear-gradient(270deg,#000000,#050207 30%,#0b0411,#12071c,#180926,#1f0c31,#260f3c);
+}
+.btn{
+    background-color: #3a1c59;
+}
+.inputStyle{
+    background-color: #2a1141;
+}
+.lmHeading{
+    font-family: "Madimi One", sans-serif;
+    color: #ffffff;
+}
+.registerPara{
+    text-transform: capitalize;
+    color: #ffffff;
+}
+.registernowHeading{
+    color: #ffffff;
+}
+.footballLogo{
+    filter: drop-shadow(0px 0px 15px #681661);
+    animation: rotation 5s infinite linear;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
