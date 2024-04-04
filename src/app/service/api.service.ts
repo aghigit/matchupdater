@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  SERVER_URL = "https://footballupdater-server.onrender.com"
+  SERVER_URL = "https://footballupdater-server.onrender.com" 
   constructor(private http:HttpClient) { }
 
   getsampleMatchAPI(){
