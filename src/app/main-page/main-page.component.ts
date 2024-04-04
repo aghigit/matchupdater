@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { LoaderService } from '../loader.service';
 
 @Component({
   selector: 'app-main-page',
@@ -19,7 +20,8 @@ export class MainPageComponent implements OnInit{
   allpressReleases:any=[]
 
 
-  constructor(private api:ApiService, private route:ActivatedRoute, private spinner:NgxSpinnerService){}
+  constructor(private api:ApiService, private route:ActivatedRoute, private spinner:NgxSpinnerService
+    , public loaderService:LoaderService){}
 
   ngOnInit(): void {
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LoaderService } from '../loader.service';
 
 @Component({
   selector: 'app-editpointtable',
@@ -12,7 +13,8 @@ export class EditpointtableComponent implements OnInit{
 
   singlePoint:any= {}
 
-  constructor(private route:ActivatedRoute,private api:ApiService, private router:Router,private toaster:ToastrService){}
+  constructor(private route:ActivatedRoute,private api:ApiService, private router:Router,
+    private toaster:ToastrService,public loaderService:LoaderService){}
 
 
   ngOnInit(): void {

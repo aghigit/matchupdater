@@ -4,6 +4,7 @@ import { ApiService } from '../service/api.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { LoaderService } from '../loader.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -20,7 +21,8 @@ export class SignUpComponent {
   })
 
   constructor(private fb:FormBuilder, private api:ApiService , private router:Router,
-     private toaster:ToastrService, private spinner:NgxSpinnerService){}
+     private toaster:ToastrService, private spinner:NgxSpinnerService
+     ,public loaderService:LoaderService){}
 
   register(){
 

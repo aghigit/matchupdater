@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../service/api.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LoaderService } from '../loader.service';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class AddpointstableComponent {
     loss:['',[Validators.pattern('[0-9]*')]],
     point:['',[Validators.required,Validators.pattern('[0-9]*')]]   
   })
-  constructor(private fb:FormBuilder, private api:ApiService, private router:Router, private toaster:ToastrService){}
+  constructor(private fb:FormBuilder, private api:ApiService, private router:Router, 
+    private toaster:ToastrService,public loaderService:LoaderService){}
 
   postPoints(){
     if(this.addpoints.valid){ 

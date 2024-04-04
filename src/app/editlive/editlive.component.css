@@ -20,6 +20,10 @@
         transform: rotate(0deg);
     }
 }
+.progressBar{
+    position: fixed;
+    width: 100%;
+}
 
 
 .form-control{

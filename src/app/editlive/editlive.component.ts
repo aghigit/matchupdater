@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LoaderService } from '../loader.service';
 
 @Component({
   selector: 'app-editlive',
@@ -12,7 +13,8 @@ export class EditliveComponent implements OnInit{
 
   liveDetails:any={}
 
-  constructor(private api:ApiService, private route:ActivatedRoute,private router:Router, private toaster:ToastrService){}
+  constructor(private api:ApiService, private route:ActivatedRoute,private router:Router,
+     private toaster:ToastrService,public loaderService:LoaderService){}
 
   ngOnInit(): void {
     this.route.params.subscribe((res:any)=>{

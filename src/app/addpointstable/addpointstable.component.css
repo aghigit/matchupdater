@@ -21,6 +21,12 @@
     }
 }
 
+.progressBar{
+    position: fixed;
+    width: 100%;
+}
+
+
 .registerCard{
     background-image: linear-gradient(270deg,#000000,#050207 30%,#0b0411,#12071c,#180926,#1f0c31,#260f3c);
 }

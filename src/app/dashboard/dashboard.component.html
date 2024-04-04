@@ -78,7 +78,7 @@
 
        <div class="w-100 d-flex align-items-center justify-content-around flex-wrap mb-3">
         <div *ngFor="let imgData of higlightImages" class="ms-3 mt-3 d-flex flex-column"> 
-          <img  height="200px" src="https://footballupdater-server.onrender.com/uploads/{{imgData.mainimage}}" alt="no image">
+          <img  height="200px" src="https://footballupdater-server.onrender.com/{{imgData.mainimage}}" alt="no image">
           <button (click)="deleteImage(imgData._id)" class="btn btn-outline-light text-light">DELETE-IMAGE
             <img  src="assets/image/delete_6861362.png" height="20px" class="mt-2 mb-2" alt="">
            </button> 

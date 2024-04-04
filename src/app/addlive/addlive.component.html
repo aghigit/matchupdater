@@ -15,6 +15,12 @@
       </div>
     </div>
   </nav>
+  
+  <div *ngIf="loaderService.isLoading | async" class="progressBar">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  
+  
 
 <h2 class="text-center mt-3">ADD LIVESCORE DETAILS</h2>
 

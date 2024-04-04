@@ -21,6 +21,11 @@
     }
 }
 
+.progressBar{
+    position: fixed;
+    width: 100%;
+}
+
 .form-control{
     /* background-color: #2a1141; */
     background-image: linear-gradient(135deg,#000000,#050207 30%,#0b0411,#12071c,#180926,#1f0c31,#260f3c);

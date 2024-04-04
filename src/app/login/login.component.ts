@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from '../service/api.service';
 import { Router } from '@angular/router';
+import { LoaderService } from '../loader.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,8 @@ export class LoginComponent {
     password:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]]
   })
 
-  constructor(private fb:FormBuilder, private toaster:ToastrService, private api:ApiService, private router:Router){}
+  constructor(private fb:FormBuilder, private toaster:ToastrService, private api:ApiService, private router:Router
+    ,public loaderService:LoaderService){}
 
 
   login(){

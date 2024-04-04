@@ -3,6 +3,7 @@ import { ApiService } from '../service/api.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LoaderService } from '../loader.service';
 
 @Component({
   selector: 'app-addlive',
@@ -20,7 +21,8 @@ export class AddliveComponent {
     discription:['']
   })
 
-  constructor(private api:ApiService, private fb:FormBuilder, private router:Router, private toaster:ToastrService){}
+  constructor(private api:ApiService, private fb:FormBuilder, private router:Router
+    , private toaster:ToastrService,public loaderService:LoaderService){}
 
   addDeatils(){
     if(this.addlive.valid && this.addlive.value.clubname1!=this.addlive.value.clubname2){

@@ -15,6 +15,11 @@
     </div>
   </nav>
 
+  <div *ngIf="loaderService.isLoading | async" class="progressBar">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+
+
 
   <form [formGroup]="addPress">
     <div class="d-flex align-items-center justify-content-center flex-column w-100 mb-3" style="height: 85dvh;">

@@ -20,6 +20,11 @@
         transform: rotate(0deg);
     }
 }
+.progressBar{
+    position: fixed;
+    width: 100%;
+}
+
 
 .form-control{
     /* background-color: #2a1141; */

@@ -3,6 +3,7 @@ import { ApiService } from '../service/api.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LoaderService } from '../loader.service';
 
 @Component({
   selector: 'app-addpress',
@@ -16,7 +17,8 @@ export class AddpressComponent {
     pressDiscription:['']
   })
 
-  constructor(private api:ApiService, private fb:FormBuilder, private router:Router, private toaster:ToastrService){}
+  constructor(private api:ApiService, private fb:FormBuilder, private router:Router, 
+    private toaster:ToastrService,public loaderService:LoaderService){}
 
   postPress(){
     if(this.addPress.valid){

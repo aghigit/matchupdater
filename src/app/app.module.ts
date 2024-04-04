@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddsliderComponent } from './addslider/addslider.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,6 +20,10 @@ import { AddpressComponent } from './addpress/addpress.component';
 import { UpdatepressComponent } from './updatepress/updatepress.component';
 import { EditliveComponent } from './editlive/editlive.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import {MatProgressBarModule} from '@angular/material/progress-bar'
+import { InterceptorService } from './interceptor.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+
 
 @NgModule({
   declarations: [
@@ -45,9 +49,13 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     FormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

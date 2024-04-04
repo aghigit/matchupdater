@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LoaderService } from '../loader.service';
 
 @Component({
   selector: 'app-addslider',
@@ -15,7 +16,7 @@ export class AddsliderComponent {
 
   mainImage:string='assets/image/football-4254951_1280.png'
 
-  constructor(private api:ApiService, private toaster:ToastrService){}
+  constructor(private api:ApiService, private toaster:ToastrService,public loaderService:LoaderService){}
 
 
    getMainimg(event:any){

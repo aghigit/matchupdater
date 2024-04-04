@@ -48,3 +48,7 @@
     color: #ffffff;
     background-image: linear-gradient(200deg,#000000,#050207 ,#0b0411,#12071c,#180926,#1f0c31,#3d1e5a 50%);
 }
+.progressBar{
+    position: fixed;
+    width: 100%;
+}

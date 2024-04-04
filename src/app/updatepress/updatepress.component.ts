@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { LoaderService } from '../loader.service';
 
 @Component({
   selector: 'app-updatepress',
@@ -11,7 +13,8 @@ export class UpdatepressComponent implements OnInit{
 
   pressReleases:any={}
 
-  constructor(private api:ApiService, private route:ActivatedRoute,private router:Router){}
+  constructor(private api:ApiService, private route:ActivatedRoute,private router:Router,
+    private toaster:ToastrService,public loaderService:LoaderService){}
 
   ngOnInit(): void {
     this.route.params.subscribe((res:any)=>{
@@ -30,7 +33,7 @@ export class UpdatepressComponent implements OnInit{
   updatesinglePress(id:any){
     this.api.updatepressreleaseAPI(id,this.pressReleases).subscribe({
       next:(res:any)=>{
-        alert("updated successfully")
+        this.toaster.success("updated successfully",'',{timeOut: 2000, positionClass: 'toast-top-center',progressBar: true})
       },
       error:(reason:any)=>{
         console.log(reason.error);
