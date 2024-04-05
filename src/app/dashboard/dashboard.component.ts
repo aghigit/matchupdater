@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit{
 
   allpressReleases:any=[]
 
-  adminname:any=''
+  adminname:string=''
 
   constructor(private api:ApiService, private toaster:ToastrService, private router:Router){}
 
@@ -25,12 +25,12 @@ export class DashboardComponent implements OnInit{
     this.getlive()
     this.getimages()
     this.getpressReleases()
-    this.getadminname()
   }
 
-  getadminname(){
-  this.adminname =  sessionStorage.getItem('existingUser')
+  if(sessionStorage.getItem("existingUser")){
+    this.adminname = JSON.parse(sessionStorage.getItem("existingUser") || "").username
   }
+
 
   getlive(){ 
     this.api.getliveAPI().subscribe({ 
