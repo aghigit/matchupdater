@@ -25,10 +25,9 @@ export class DashboardComponent implements OnInit{
     this.getlive()
     this.getimages()
     this.getpressReleases()
-  }
-
-  if(sessionStorage.getItem("existingUser")){
+    if(sessionStorage.getItem("existingUser")){
     this.adminname = JSON.parse(sessionStorage.getItem("existingUser") || "").username
+  }
   }
 
 
